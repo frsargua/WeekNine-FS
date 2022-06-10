@@ -1,12 +1,5 @@
 // Render sections based on the "when" output
 
-// This render function renders the description, usage and Contributing.
-const renderSection = (sectionTitle, text) => {
-  const sectionEl = `##${sectionTitle}
-    ${text}    
-    `;
-};
-
 // This renders the table of contents
 const renderTC = (arrayOfAnswers) => {
   console.log("Running renderTC function");
@@ -27,7 +20,14 @@ const renderTC = (arrayOfAnswers) => {
   return stringEl;
 };
 
-// This renders the table of contents
+// This render function renders the description, usage, contributing and questions.
+const renderSection = (sectionTitle, text) => {
+  const sectionEl = `##${sectionTitle}
+    ${text}    
+    `;
+};
+
+// This renders installation.
 const renderInstallation = (arrayEL) => {
   console.log("Running renderInstallation function");
 
@@ -45,4 +45,39 @@ const renderInstallation = (arrayEL) => {
   `;
   console.log(installationEl);
   return installationEl;
+};
+
+// This renders the licenses
+const licenseRender = (arrayEL) => {
+  console.log("Running licenseRender function");
+
+  let stringEl = "";
+
+  for (let i = 0; i < arrayEL.length; i++) {
+    stringEl = stringEl + "\n" + arrayEL[i];
+  }
+
+  const licenseEl = `##License
+These are the project's licenses
+${stringEl}
+  `;
+  console.log(licenseEl);
+  return licenseEl;
+};
+
+// This renders the tests
+const testRender = (arrayEL) => {
+  console.log("Running testRender function");
+
+  let stringEl = "";
+
+  for (let i = 0; i < arrayEL.length; i++) {
+    stringEl = stringEl + "\n" + arrayEL[i];
+  }
+
+  const testEl = `##Tests
+${stringEl}
+  `;
+  console.log(testEl);
+  return testEl;
 };
