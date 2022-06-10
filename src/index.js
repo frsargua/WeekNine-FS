@@ -24,6 +24,25 @@ const renderTC = (arrayOfAnswers) => {
       stringEl = stringEl + "\n" + arrayOfLinks[i];
     }
   }
+  return stringEl;
 };
 
-renderTC([true, false, true, true, true]);
+// This renders the table of contents
+const renderInstallation = (arrayEL) => {
+  console.log("Running renderInstallation function");
+
+  let stringEl = "";
+
+  for (let i = 0; i < arrayEL.length; i++) {
+    stringEl = stringEl + "\n" + arrayEL[i];
+  }
+
+  const installationEl = `##Installation
+  \`\`\`
+  Please enter your project installation:
+  ${stringEl}
+  \`\`\`ˆ
+  `;
+  console.log(installationEl);
+  return installationEl;
+};
